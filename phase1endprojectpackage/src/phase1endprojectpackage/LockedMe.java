@@ -14,6 +14,7 @@ public class LockedMe {
 	}
 	public static void welcomeScreen() {
 		Application app=new Application();
+		LockedMe lm=new LockedMe();
 		while(true) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````");
@@ -52,20 +53,23 @@ public class LockedMe {
 		Application app1=new Application();
 		File fs[]=app1.getFileList();
 		TreeSet<String> ts=new TreeSet<String>();
-	
+
+
 		if(fs.length!=0) {
 		for(File i:fs) {
 				ts.add(i.getName());
-				//System.out.println(i.getName());
 			
-		}}
-		else {
+		}
+		}
+		
+	else{
 			System.out.println("Directory is Empty");
 		}
 		for(String i:ts) {
 			System.out.println(i);
 		}
-	}
+	
+}
 }
 class Application {
 
@@ -162,7 +166,7 @@ class Application {
 			
 			if(i.getName().equals(searchInput)) {
 				if(i.isFile()) {
-					System.out.println("The file"+i.getName()+"is found");
+					System.out.println("The file"+i.getName()+" is found");
 					
 				}
 				if(i.isDirectory()) {
